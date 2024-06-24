@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function App() {
   return (
-    <div>App</div>
+    <div>
+      <h1> My First Pipeline </h1>
+    </div>
   )
 }
