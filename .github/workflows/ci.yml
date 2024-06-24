@@ -1,0 +1,40 @@
+# Como o título já é bem sugestivo, o nome da nossa workflow
+name: First pipeline
+
+# Esse metodo indica o momento onde irá triggar essa nossa pipeline.
+on: 
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+Esse metodo é onde a mágica acontece, onde irá rodar todos os comandos da nossa esteira (Pipeline)
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js '20.x'
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'yarn'
+    
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Linting
+      run: yarn ci:lint
+
+    - name: Checking types
+      run: yarn typecheck
+
+    - name: Testing
+      run: yarn ci:test
+
+    #       "": "tsc -b",
+    # "": "prettier --check src",
+    # "": "echo 'Testes passarram!'"
