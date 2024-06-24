@@ -1,14 +1,11 @@
-# Como o título já é bem sugestivo, o nome da nossa workflow
 name: First pipeline
 
-# Esse metodo indica o momento onde irá triggar essa nossa pipeline.
 on: 
   push:
     branches: main
   pull_request:
     branches: main
 
-Esse metodo é onde a mágica acontece, onde irá rodar todos os comandos da nossa esteira (Pipeline)
 jobs:
   ci:
     runs-on: ubuntu-latest
