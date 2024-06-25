@@ -12,7 +12,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1> Pipeline CI/CD in React.JS </h1>
+      <h1> Deploy Sucessfully!  </h1>
     </>
   );
 }
