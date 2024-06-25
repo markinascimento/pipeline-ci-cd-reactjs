@@ -31,7 +31,3 @@ jobs:
 
     - name: Testing
       run: yarn ci:test
-
-    #       "": "tsc -b",
-    # "": "prettier --check src",
-    # "": "echo 'Testes passarram!'"
