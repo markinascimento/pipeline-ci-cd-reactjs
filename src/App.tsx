@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <h1> Agora o title está aqui em cima! </h1>
+      <h3> Aqui está um subtitle </h3>
 
       <div>
         <a href="https://vitejs.dev" target="_blank">
