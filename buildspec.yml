@@ -1,10 +1,10 @@
 version: 0.2
 
-phases: 
+phases:
   install:
     runtime-versions:
       nodejs: 20
-  
+
   pre_build:
     commands:
       - yarn install --lock.file
@@ -12,3 +12,8 @@ phases:
   build:
     commands:
       - yarn build
+  
+  post_build:
+    commands:
+      - aws s3 sync --delete ./dist s3://pipeline-react-and-github-actions
+
